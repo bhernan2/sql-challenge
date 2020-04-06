@@ -16,6 +16,7 @@ CREATE TABLE "departments" (
         "dept_no"
      )
 );
+
 --department employees
 CREATE TABLE "dept_emp" (
     "emp_no" INT   NOT NULL,
@@ -23,14 +24,49 @@ CREATE TABLE "dept_emp" (
     "from_date" DATE NOT NULL,
     "to_date" DATE NOT NULL
 );
---department managers
-CREATE TABLE "dept_managers" (
-    "dept_no" VARCHAR NOT NULL,
-    "emp_no" INT NOT NULL,
-    "from_date" DATE NOT NULL,
-    "to_date" DATE NOT NULL,
 
+--department managers
+CREATE TABLE "dept_manager" (
+	"dept_no" VARCHAR NOT NULL,
+	"emp_no" INT NOT NULL,
+	"from_date" DATE NOT NULL,
+	"to_date" DATE NOT NULL
 );
+
+--employees
+CREATE TABLE "employees" (
+    "emp_no" VARCHAR NOT NULL,
+    "birth_date" DATE NOT NULL,
+    "first_name" VARCHAR NOT NULL,
+    "last_name" VARCHAR NOT NULL,
+    "gender" VARCHAR NOT NULL,
+    "hire_date" DATE NOT NULL
+);
+
+--salaries
+CREATE TABLE "salaries" (
+    "emp_no" INT   NOT NULL,
+    "salary" INT   NOT NULL,
+    "from_date" DATE   NOT NULL,
+    "to_date" DATE   NOT NULL
+);
+
+--titles 
+CREATE TABLE "titles" (
+    "emp_no" INT   NOT NULL,
+    "title" VARCHAR   NOT NULL,
+    "from_date" DATE   NOT NULL,
+    "to_date" DATE   NOT NULL
+);
+
+--import data & check tables 
+SELECT * FROM departments;
+SELECT * FROM dept_emp;
+SELECT * FROM dept_manager;
+SELECT * FROM employees;
+SELECT * FROM salaries;
+SELECT * FROM titles;
+
 
 
 
